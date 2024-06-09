@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ca.georgiancollege.assignment1gc8953.PopulationController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.assignment1gc8953.PopulationController">
+   <children>
+      <BarChart fx:id="OntarioChart" layoutX="42.0" layoutY="29.0" prefHeight="341.0" prefWidth="529.0">
+        <xAxis>
+          <CategoryAxis label="YEARS" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="POPULATION" side="LEFT" upperBound="20000.0" />
+        </yAxis>
+      </BarChart>
+   </children>
 </AnchorPane>
