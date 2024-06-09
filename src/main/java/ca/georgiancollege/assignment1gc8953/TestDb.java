@@ -8,6 +8,8 @@ public class TestDb {
             Connection connection = DriverManager.getConnection("jdbc:mysql://database-1" +
                             ".cpiiw6m2micq.us-east-2.rds.amazonaws.com:3306/COMP1011", "admin",
                     "Narangita412.");
+
+            //This statements is to add a new row to the table
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO " +
                     "ONTARIO(Year,Population) VALUES(?,?)");
 
@@ -22,12 +24,14 @@ public class TestDb {
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("ID");
-                String year = resultSet.getString("Year");
-                String population = resultSet.getString("Population");
+                int year = resultSet.getInt("Year");
+                int population = resultSet.getInt("Population");
 
                 System.out.println(id);
                 System.out.println(year);
                 System.out.println(population);
+                System.out.println("*".repeat(20));
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
