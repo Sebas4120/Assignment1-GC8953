@@ -5,12 +5,11 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.assignment1gc8953.PopulationController">
+<AnchorPane prefHeight="482.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.assignment1gc8953.PopulationController">
    <children>
-      <BarChart fx:id="OntarioChart" layoutX="35.0" layoutY="29.0" prefHeight="341.0" prefWidth="529.0">
+      <BarChart fx:id="OntarioChart" layoutX="90.0" layoutY="66.0" prefHeight="326.0" prefWidth="512.0">
         <xAxis>
-          <CategoryAxis label="YEARS" side="BOTTOM" />
+          <CategoryAxis label="YEARS" prefHeight="47.0" prefWidth="421.0" side="BOTTOM" fx:id="xAxis" />
         </xAxis>
         <yAxis>
           <NumberAxis label="POPULATION" side="LEFT" upperBound="20000.0" />

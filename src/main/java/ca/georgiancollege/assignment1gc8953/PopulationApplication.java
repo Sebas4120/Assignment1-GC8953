@@ -10,7 +10,7 @@ import java.io.IOException;
 public class PopulationApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("assignment-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("assignment-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Population In Canada");
         stage.setScene(scene);

@@ -2,15 +2,22 @@ package ca.georgiancollege.assignment1gc8953;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PopulationController {
+
 
     @FXML
     private BarChart<String, Number> OntarioChart;
@@ -19,6 +26,8 @@ public class PopulationController {
     void initialize() {
 
         XYChart.Series<String, Number> data = new XYChart.Series<>();
+
+
 
         try(
                 Connection connection = DriverManager.getConnection("jdbc:mysql://database-1" +
@@ -33,6 +42,8 @@ public class PopulationController {
                 String year = resultSet.getString("Year");
                 int population = resultSet.getInt("Population");
                 data.getData().add(new XYChart.Data<>(year, population));
+
+
             }
 
         } catch(SQLException e) {
@@ -40,6 +51,10 @@ public class PopulationController {
         }
 
         OntarioChart.getData().add(data);
+        OntarioChart.setTitle("Population in Ontario");
+        OntarioChart.setLegendVisible(false);
+
+
     }
 
 
