@@ -12,7 +12,7 @@ public class OntarioTableApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("OntarioTable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Ontario Table Data");
         stage.setScene(scene);
         stage.show();
