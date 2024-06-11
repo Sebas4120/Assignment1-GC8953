@@ -23,7 +23,10 @@ public class OntarioTableController {
     void initialize() throws SQLException {
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://database-1.cpiiw6m2micq.us-east-2.rds.amazonaws.com:3306/COMP1011", "admin", "Narangita412.");
+            //Connection to my database
+            Connection connection = DriverManager.getConnection("jdbc:mysql://database-1." +
+                    "cpiiw6m2micq.us-east-2.rds.amazonaws.com:3306/COMP1011", "admin"
+                    , "Narangita412.");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM ONTARIO");
 
@@ -40,6 +43,7 @@ public class OntarioTableController {
 
             // Agregar las columnas al TableView
             tableView.getColumns().addAll(idColumn, yearColumn, populationColumn);
+
 
             //Uploading the data from data base
             ObservableList<Province> data = FXCollections.observableArrayList();
