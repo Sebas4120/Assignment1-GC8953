@@ -1,6 +1,6 @@
 package ca.georgiancollege.assignment1gc8953.Controllers;
 
-import ca.georgiancollege.assignment1gc8953.Models.OntarioChartModel;
+import ca.georgiancollege.assignment1gc8953.Models.OntarioModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,16 +12,16 @@ public class OntarioTableController {
 
 
     @FXML
-    private TableView<OntarioChartModel> tableView;
+    private TableView<OntarioModel> tableView;
 
     @FXML
-    private TableColumn<OntarioChartModel, Integer> idColumn;
+    private TableColumn<OntarioModel, Integer> idColumn;
 
     @FXML
-    private TableColumn<OntarioChartModel, String> yearColumn;
+    private TableColumn<OntarioModel, String> yearColumn;
 
     @FXML
-    private TableColumn<OntarioChartModel, Integer> populationColumn;
+    private TableColumn<OntarioModel, Integer> populationColumn;
 
     public void initialize(){
         //Configuration of the columns to match the model attributes
@@ -30,8 +30,8 @@ public class OntarioTableController {
         populationColumn.setCellValueFactory(new PropertyValueFactory<>("population"));
 
         //Getting the data from the model
-        ObservableList<OntarioChartModel> data =
-                FXCollections.observableArrayList(OntarioChartModel.getOntarioData2());
+        ObservableList<OntarioModel> data =
+                FXCollections.observableArrayList(OntarioModel.getOntarioData2());
 
         //Adding the data to the table
         tableView.setItems(data);

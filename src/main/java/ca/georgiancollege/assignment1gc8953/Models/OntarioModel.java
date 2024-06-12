@@ -7,20 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OntarioChartModel {
+public class OntarioModel {
 
     private String year;
     private int population,id;
 
-    public OntarioChartModel() {}
+    public OntarioModel() {}
 
-    public OntarioChartModel(int id, String year, int population) {
+    public OntarioModel(int id, String year, int population) {
         this.id = id;
         this.year = year;
         this.population = population;
     }
 
-    public OntarioChartModel(String year, int population) {
+    public OntarioModel(String year, int population) {
         this.year = year;
         this.population = population;
     }
@@ -54,8 +54,8 @@ public class OntarioChartModel {
 
     private static DBUtil db = new DBUtil("COMP1011");
 
-    public static List<OntarioChartModel> getOntarioData(){
-        List<OntarioChartModel> ontarioChartModels = new ArrayList<>();
+    public static List<OntarioModel> getOntarioData(){
+        List<OntarioModel> ontarioModels = new ArrayList<>();
 
         String query = "SELECT Year, Population FROM ONTARIO";
 
@@ -65,9 +65,9 @@ public class OntarioChartModel {
             while (resultSet.next()){
                 String year = resultSet.getString("YEAR");
                 int population = resultSet.getInt("Population");
-                OntarioChartModel ontarioChartModel = new OntarioChartModel(year, population);
+                OntarioModel ontarioModel = new OntarioModel(year, population);
                 // Assuming id is not used
-                ontarioChartModels.add(ontarioChartModel);
+                ontarioModels.add(ontarioModel);
             }
 
             resultSet.close();
@@ -75,11 +75,11 @@ public class OntarioChartModel {
             System.err.println(e);
         }
 
-        return ontarioChartModels;
+        return ontarioModels;
     }
 
-    public static List<OntarioChartModel> getOntarioData2(){
-        List<OntarioChartModel> ontarioChartModels = new ArrayList<>();
+    public static List<OntarioModel> getOntarioData2(){
+        List<OntarioModel> ontarioModels = new ArrayList<>();
 
         String query = "SELECT * FROM ONTARIO";
 
@@ -90,9 +90,9 @@ public class OntarioChartModel {
                 int id = resultSet.getInt("ID");
                 String year = resultSet.getString("YEAR");
                 int population = resultSet.getInt("Population");
-                OntarioChartModel ontarioChartModel = new OntarioChartModel(id,year, population);
+                OntarioModel ontarioModel = new OntarioModel(id,year, population);
                 // Assuming id is not used
-                ontarioChartModels.add(ontarioChartModel);
+                ontarioModels.add(ontarioModel);
             }
 
             resultSet.close();
@@ -100,7 +100,7 @@ public class OntarioChartModel {
             System.err.println(e);
         }
 
-        return ontarioChartModels;
+        return ontarioModels;
     }
 
 }

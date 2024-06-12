@@ -1,7 +1,7 @@
 package ca.georgiancollege.assignment1gc8953.Controllers;
 
 import ca.georgiancollege.assignment1gc8953.DBUtil;
-import ca.georgiancollege.assignment1gc8953.Models.OntarioChartModel;
+import ca.georgiancollege.assignment1gc8953.Models.OntarioModel;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
@@ -22,13 +22,13 @@ public class PopulationController {
     }
 
     private void populateChart(){
-        List<OntarioChartModel> ontarioChartModels = OntarioChartModel.getOntarioData();
+        List<OntarioModel> ontarioModels = OntarioModel.getOntarioData();
 
         XYChart.Series<String,Number> series = new XYChart.Series<>();
         series.setName("Ontario Population");
 
-        for (OntarioChartModel ontarioChartModel : ontarioChartModels){
-            series.getData().add(new XYChart.Data<>(ontarioChartModel.getYear(), ontarioChartModel.getPopulation()));
+        for (OntarioModel ontarioModel : ontarioModels){
+            series.getData().add(new XYChart.Data<>(ontarioModel.getYear(), ontarioModel.getPopulation()));
         }
 
         OntarioChart.getData().add(series);
