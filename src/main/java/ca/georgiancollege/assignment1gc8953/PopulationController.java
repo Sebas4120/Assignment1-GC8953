@@ -22,40 +22,27 @@ public class PopulationController {
     @FXML
     private BarChart<String, Number> OntarioChart;
 
+    private DBUtil dbUtil;
+
     @FXML
-    void initialize() {
+    public void initialize(){
+        populateChart();
+    }
 
-        XYChart.Series<String, Number> data = new XYChart.Series<>();
+    private void populateChart(){
+        List<Province> provinces = Province.getOntarioData();
 
+        XYChart.Series<String,Number> series = new XYChart.Series<>();
+        series.setName("Ontario Population");
 
-
-        try(
-                Connection connection = DriverManager.getConnection("jdbc:mysql://database-1" +
-                        ".cpiiw6m2micq.us-east-2.rds.amazonaws.com:3306/COMP1011", "admin",
-                "Narangita412.");
-            Statement statement = connection.createStatement()){
-
-            String query = "SELECT Year, Population FROM ONTARIO";
-            ResultSet resultSet = statement.executeQuery(query);
-
-            while (resultSet.next()) {
-                String year = resultSet.getString("Year");
-                int population = resultSet.getInt("Population");
-                data.getData().add(new XYChart.Data<>(year, population));
-
-
-            }
-
-        } catch(SQLException e) {
-            throw new RuntimeException(e);
+        for (Province province: provinces){
+            series.getData().add(new XYChart.Data<>(province.getYear(),province.getPopulation()));
         }
 
-        OntarioChart.getData().add(data);
-        OntarioChart.setTitle("Population in Ontario");
-        OntarioChart.setLegendVisible(false);
-
-
+        OntarioChart.getData().add(series);
     }
+
+
 
 
 }
