@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                ca.georgiancollege.assignment1gc8953/ca.georgiancollege.assignment1gc8953.PopulationApplication
+                                ca.georgiancollege.assignment1gc8953/ca.georgiancollege.assignment1gc8953.Runners.PopulationApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

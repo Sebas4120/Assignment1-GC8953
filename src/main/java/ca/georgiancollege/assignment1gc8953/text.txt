@@ -29,3 +29,56 @@
 
 
     }
+
+
+
+
+
+
+    @FXML
+        void initialize() throws SQLException {
+
+            try {
+                //Connection to my database
+                Connection connection = DriverManager.getConnection("jdbc:mysql://database-1." +
+                        "cpiiw6m2micq.us-east-2.rds.amazonaws.com:3306/COMP1011", "admin"
+                        , "Narangita412.");
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM ONTARIO");
+
+                //Creating columns and setting configuration
+                TableColumn<OntarioChartModel, Integer> idColumn = new TableColumn<>("ID");
+                idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+
+                TableColumn<OntarioChartModel, String> yearColumn = new TableColumn<>("Year");
+                yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
+
+                TableColumn<OntarioChartModel, Integer> populationColumn = new TableColumn<>("Population");
+                populationColumn.setCellValueFactory(new PropertyValueFactory<>("population"));
+
+
+                // Agregar las columnas al TableView
+                tableView.getColumns().addAll(idColumn, yearColumn, populationColumn);
+
+
+                //Uploading the data from data base
+                ObservableList<OntarioChartModel> data = FXCollections.observableArrayList();
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("ID");
+                    String year = resultSet.getString("Year");
+                    int population = resultSet.getInt("Population");
+                    data.add(new OntarioChartModel(id, year, population));
+                }
+
+                //Adding the data to the TableView
+                tableView.setItems(data);
+
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+
+
+
+
+
+        }
