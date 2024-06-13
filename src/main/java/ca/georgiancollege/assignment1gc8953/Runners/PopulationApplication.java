@@ -27,11 +27,11 @@ public class PopulationApplication extends Application {
         stage.show();
     }
 
-    public static void switchScene(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        primaryStage.setScene(scene);
-    }
+//    public static void switchScene(String fxml) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource(fxml));
+//        Scene scene = new Scene(fxmlLoader.load());
+//        primaryStage.setScene(scene);
+//    }
 
     public static void main(String[] args) {
         launch();
