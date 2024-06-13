@@ -26,15 +26,6 @@ public class PopulationController {
     @FXML
     public void initialize(){
         populateChart();
-
-        btnChart.setOnAction(event -> {
-            try{
-                PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/OntarioTable.fxml");
-
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-        });
     }
 
 
