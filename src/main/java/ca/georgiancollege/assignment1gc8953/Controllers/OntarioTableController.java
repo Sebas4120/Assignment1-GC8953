@@ -1,15 +1,22 @@
 package ca.georgiancollege.assignment1gc8953.Controllers;
 
 import ca.georgiancollege.assignment1gc8953.Models.OntarioModel;
+import ca.georgiancollege.assignment1gc8953.Runners.PopulationApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
+
 public class OntarioTableController {
 
+
+    @FXML
+    private Button btnTable;
 
     @FXML
     private TableView<OntarioModel> tableView;
@@ -35,6 +42,17 @@ public class OntarioTableController {
 
         //Adding the data to the table
         tableView.setItems(data);
+
+        btnTable.setOnAction(event -> {
+            try{
+                PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml");
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+        });
     }
+
+
 
 }

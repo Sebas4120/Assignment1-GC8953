@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class OntarioTableApplication extends Application {
 
+    private static Stage primaryStage;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("/ca/georgiancollege/assignment1gc8953/OntarioTable.fxml"));

@@ -19,7 +19,7 @@
           <NumberAxis label="Population" side="LEFT" upperBound="20000.0" />
         </yAxis>
       </BarChart>
-      <Button layoutX="552.0" layoutY="445.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="119.0" text="View Table" />
+      <Button fx:id="btnTable" layoutX="552.0" layoutY="445.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="119.0" text="View Table" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="40.0" prefHeight="39.0" prefWidth="268.0" text="ONTARIO POPULATION">
          <font>
             <Font size="24.0" />
