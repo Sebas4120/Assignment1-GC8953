@@ -16,7 +16,7 @@ public class PopulationController {
 
 
     @FXML
-    private Button btnChart;
+    private Button btnTable;
 
     @FXML
     private BarChart<String, Number> OntarioChart;
@@ -26,6 +26,14 @@ public class PopulationController {
     @FXML
     public void initialize(){
         populateChart();
+
+        btnTable.setOnAction(event -> {
+            try {
+                PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/OntarioTable.fxml");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 

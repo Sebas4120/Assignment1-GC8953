@@ -16,7 +16,7 @@ public class OntarioTableController {
 
 
     @FXML
-    private Button btnTable;
+    private Button btn2;
 
     @FXML
     private TableView<OntarioModel> tableView;
@@ -43,14 +43,14 @@ public class OntarioTableController {
         //Adding the data to the table
         tableView.setItems(data);
 
-//        btnTable.setOnAction(event -> {
-//            try{
-//                PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml");
-//            }catch (IOException e){
-//                e.printStackTrace();
-//            }
-//
-//        });
+        btn2.setOnAction(event -> {
+            try{
+                PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml");
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+        });
     }
 
 
