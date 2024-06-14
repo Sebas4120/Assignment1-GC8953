@@ -55,6 +55,7 @@ public class PopulationController {
     }
 
     private void populateChart(){
+
         totalRadio.setSelected(true);
 
         //Setting the title of the chart

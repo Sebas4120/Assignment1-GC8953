@@ -30,3 +30,14 @@
 #radioBacks{
     -fx-background-color: #5979a2;
 }
+
+#xAxis{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+#yAxis{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+

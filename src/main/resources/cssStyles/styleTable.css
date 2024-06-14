@@ -1,0 +1,31 @@
+#paneBack{
+    -fx-background-color: #3b495f;
+}
+
+#titleTable{
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#tableView{
+    -fx-background-color: #fff082;
+    -fx-border-color: #040303;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+#btn2{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-padding: 2 6 2 6;
+}
+
+#btn2:hover{
+    -fx-background-color: #c4c4c4;
+    -fx-text-fill: white;
+}
