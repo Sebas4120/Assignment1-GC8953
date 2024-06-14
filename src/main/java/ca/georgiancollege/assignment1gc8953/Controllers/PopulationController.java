@@ -58,14 +58,14 @@ public class PopulationController {
         totalRadio.setSelected(true);
 
         //Setting the title of the chart
-        titleChart.setText("Total Population in Ontario");
+        titleChart.setText("Total Population in Ontario (1970 - 2024)");
 
         //Getting the data from the model
         List<OntarioModel> ontarioModels = OntarioModel.getOntarioData();
 
         //Creating the series
         XYChart.Series<String,Number> series = new XYChart.Series<>();
-        series.setName("Total Ontario Population");
+        series.setName("Total Ontario Population (1970 - 2024)");
 
         //Adding the data to the series
         for (OntarioModel ontarioModel : ontarioModels){
@@ -88,7 +88,7 @@ public class PopulationController {
             totalRadio.setSelected(false);
 
             //Setting the title of the chart
-            titleChart.setText("Male Population in Ontario");
+            titleChart.setText("Male Population in Ontario (1970 - 2024)");
 
             //Clearing the chart
             OntarioChart.getData().clear();
@@ -98,7 +98,7 @@ public class PopulationController {
 
             //Creating the series
             XYChart.Series<String,Number> series = new XYChart.Series<>();
-            series.setName("Male Population in Ontario");
+            series.setName("Male Population in Ontario (1970 - 2024)");
 
             //Adding the data to the series
             for (OntarioModel ontarioModel : ontarioModels){
@@ -123,7 +123,7 @@ public class PopulationController {
             totalRadio.setSelected(false);
 
             //Setting the title of the chart
-            titleChart.setText("Female Population in Ontario");
+            titleChart.setText("Female Population in Ontario (1970 - 2024)");
 
             //Clearing the chart
             OntarioChart.getData().clear();
@@ -133,7 +133,7 @@ public class PopulationController {
 
             //Creating the series
             XYChart.Series<String,Number> series = new XYChart.Series<>();
-            series.setName("Female Population in Ontario");
+            series.setName("Female Population in Ontario (1970 - 2024)");
 
             //Adding the data to the series
             for (OntarioModel ontarioModel : ontarioModels){

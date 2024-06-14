@@ -1,0 +1,32 @@
+#btnTable{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-padding: 2 6 2 6;
+}
+
+#btnTable:hover{
+    -fx-background-color: #c4c4c4;
+    -fx-text-fill: white;
+}
+
+#OntarioChart{
+    -fx-background-color: #58a4a6;
+}
+
+#anchorPane{
+    -fx-background-color: #162547;
+}
+
+#titleChart{
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    /*-fx-background-color: #58a4a6;*/
+}
+
+#radioBacks{
+    -fx-background-color: #5979a2;
+}

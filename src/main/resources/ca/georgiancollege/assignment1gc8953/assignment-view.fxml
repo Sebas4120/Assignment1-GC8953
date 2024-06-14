@@ -7,26 +7,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="482.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.assignment1gc8953.Controllers.PopulationController">
+<AnchorPane fx:id="anchorPane" prefHeight="482.0" prefWidth="698.0" stylesheets="@../../../cssStyles/styleChart.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.assignment1gc8953.Controllers.PopulationController">
    <children>
-      <BarChart fx:id="OntarioChart" layoutX="50.0" layoutY="98.0" prefHeight="327.0" prefWidth="597.0">
+      <BarChart fx:id="OntarioChart" layoutX="50.0" layoutY="78.0" prefHeight="325.0" prefWidth="597.0" stylesheets="@../../../cssStyles/styleChart.css">
         <xAxis>
-          <CategoryAxis label="Year" prefHeight="47.0" prefWidth="421.0" side="BOTTOM" fx:id="xAxis" />
+          <CategoryAxis label="Year" prefHeight="47.0" prefWidth="506.0" side="BOTTOM" fx:id="xAxis" />
         </xAxis>
         <yAxis>
           <NumberAxis label="Population" side="LEFT" upperBound="20000.0" />
         </yAxis>
       </BarChart>
-      <Button fx:id="btnTable" layoutX="552.0" layoutY="445.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="119.0" text="View Table" />
-      <Label fx:id="titleChart" alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="41.0" prefHeight="39.0" prefWidth="533.0" text="ONTARIO POPULATION">
+      <Button fx:id="btnTable" layoutX="555.0" layoutY="449.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="119.0" stylesheets="@../../../cssStyles/styleChart.css" text="View Table" />
+      <Label fx:id="titleChart" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="25.0" prefHeight="39.0" prefWidth="655.0" stylesheets="@../../../cssStyles/styleChart.css" text="ONTARIO POPULATION" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <RadioButton fx:id="maleRadio" layoutX="291.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeMale" text="Male" />
-      <RadioButton fx:id="femaleRadio" layoutX="442.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeFemale" text="Female" />
-      <RadioButton fx:id="totalRadio" layoutX="140.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeTotal" text="Total" />
+      <Pane fx:id="radioBacks" layoutX="50.0" layoutY="405.0" prefHeight="33.0" prefWidth="597.0" stylesheets="@../../../cssStyles/styleChart.css">
+         <children>
+            <RadioButton fx:id="totalRadio" layoutX="67.0" layoutY="8.0" mnemonicParsing="false" onAction="#changeTotal" prefHeight="17.0" prefWidth="79.0" text="Total" textFill="#fffefe" />
+            <RadioButton fx:id="maleRadio" layoutX="265.0" layoutY="7.0" mnemonicParsing="false" onAction="#changeMale" prefHeight="17.0" prefWidth="68.0" text="Male" textFill="WHITE" />
+            <RadioButton fx:id="femaleRadio" layoutX="446.0" layoutY="7.0" mnemonicParsing="false" onAction="#changeFemale" text="Female" textFill="WHITE" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

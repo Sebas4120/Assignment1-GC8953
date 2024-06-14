@@ -9,6 +9,7 @@ import java.util.List;
 
 public class OntarioModel {
 
+    //Variables
     private String year;
     private int population,id,male,female;
 
@@ -30,9 +31,6 @@ public class OntarioModel {
     };
 
 
-
-    //Validation method for id
-
     public OntarioModel() {}
 
     //Constructor for the Table
@@ -48,7 +46,6 @@ public class OntarioModel {
     public OntarioModel(String year, int population) {
         this.year = year;
         this.population = population;
-
     }
 
     public String getYear() {

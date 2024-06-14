@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 
@@ -22,8 +23,11 @@ public class PopulationApplication extends Application {
         System.out.println(fxmlLoader.getLocation());
 
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Population In Canada");
+        stage.setTitle("Population In Ontario (1970 - 2024)");
         stage.setScene(scene);
+        stage.getIcons().addAll(
+                new Image(String.valueOf(getClass().getResource("/images/Ontario.jpg")))
+        );
         stage.show();
     }
 

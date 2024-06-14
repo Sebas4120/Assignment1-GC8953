@@ -16,7 +16,7 @@ public class OntarioTableApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("/ca/georgiancollege/assignment1gc8953/OntarioTable.fxml"));
         System.out.println(fxmlLoader.getLocation());
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Ontario Table Data");
+        stage.setTitle("Ontario Population (1970 - 2024) - Table Data");
         stage.setScene(scene);
         stage.show();
     }
