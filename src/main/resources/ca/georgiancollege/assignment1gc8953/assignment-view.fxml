@@ -20,13 +20,13 @@
         </yAxis>
       </BarChart>
       <Button fx:id="btnTable" layoutX="552.0" layoutY="445.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="119.0" text="View Table" />
-      <Label fx:id="titleChart" alignment="CENTER" contentDisplay="CENTER" layoutX="271.0" layoutY="40.0" prefHeight="39.0" prefWidth="268.0" text="ONTARIO POPULATION">
+      <Label fx:id="titleChart" alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="41.0" prefHeight="39.0" prefWidth="533.0" text="ONTARIO POPULATION">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <RadioButton layoutX="291.0" layoutY="427.0" mnemonicParsing="false" text="Male" />
-      <RadioButton layoutX="442.0" layoutY="427.0" mnemonicParsing="false" text="Female" />
-      <RadioButton layoutX="140.0" layoutY="427.0" mnemonicParsing="false" text="Total" />
+      <RadioButton fx:id="maleRadio" layoutX="291.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeMale" text="Male" />
+      <RadioButton fx:id="femaleRadio" layoutX="442.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeFemale" text="Female" />
+      <RadioButton fx:id="totalRadio" layoutX="140.0" layoutY="427.0" mnemonicParsing="false" onAction="#changeTotal" text="Total" />
    </children>
 </AnchorPane>

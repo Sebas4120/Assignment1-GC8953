@@ -30,11 +30,19 @@ public class OntarioTableController {
     @FXML
     private TableColumn<OntarioModel, Integer> populationColumn;
 
+    @FXML
+    private TableColumn<OntarioModel, Integer> maleColumn;
+
+    @FXML
+    private TableColumn<OntarioModel, Integer> femaleColumn;
+
     public void initialize(){
         //Configuration of the columns to match the model attributes
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         populationColumn.setCellValueFactory(new PropertyValueFactory<>("population"));
+        maleColumn.setCellValueFactory(new PropertyValueFactory<>("male"));
+        femaleColumn.setCellValueFactory(new PropertyValueFactory<>("female"));
 
         //Getting the data from the model
         ObservableList<OntarioModel> data =
