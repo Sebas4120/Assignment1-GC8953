@@ -20,11 +20,12 @@ public class PopulationApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml"));
 
-        System.out.println(fxmlLoader.getLocation());
+//        System.out.println(fxmlLoader.getLocation());
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Population In Ontario (1970 - 2024)");
         stage.setScene(scene);
+        //To add the icon to the stage
         stage.getIcons().addAll(
                 new Image(String.valueOf(getClass().getResource("/images/Ontario.jpg")))
         );
