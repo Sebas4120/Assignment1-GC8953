@@ -18,7 +18,8 @@ public class PopulationApplication extends Application {
 
         primaryStage = stage;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.getResource("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(PopulationApplication.class.
+                getResource("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml"));
 
 //        System.out.println(fxmlLoader.getLocation());
 
@@ -27,7 +28,8 @@ public class PopulationApplication extends Application {
         stage.setScene(scene);
         //To add the icon to the stage
         stage.getIcons().addAll(
-                new Image(String.valueOf(getClass().getResource("/images/Ontario.jpg")))
+                new Image(String.valueOf(getClass().
+                        getResource("/images/Ontario.jpg")))
         );
         stage.show();
     }
