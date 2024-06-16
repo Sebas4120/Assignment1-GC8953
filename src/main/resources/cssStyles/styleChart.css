@@ -1,3 +1,4 @@
+/* Style for the button */
 #btnTable{
     -fx-background-color: black;
     -fx-text-fill: white;
@@ -6,16 +7,16 @@
     -fx-border-width: 2;
     -fx-padding: 2 6 2 6;
 }
-
+/* Style for the button when the pointer hovers*/
 #btnTable:hover{
     -fx-background-color: #c4c4c4;
     -fx-text-fill: white;
 }
-
+/* Style for the Chart */
 #OntarioChart{
     -fx-background-color: #58a4a6;
 }
-
+/* Style for the AnchorPane */
 #anchorPane{
     -fx-background-color: #162547;
 }
@@ -27,10 +28,12 @@
     /*-fx-background-color: #58a4a6;*/
 }
 
+/* Style for the radio buttons background*/
 #radioBacks{
     -fx-background-color: #5979a2;
 }
 
+/* Styles for the Axis*/
 #xAxis{
     -fx-font-size: 15px;
     -fx-font-weight: bold;

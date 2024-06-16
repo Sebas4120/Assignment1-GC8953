@@ -1,13 +1,16 @@
+/*Style for the backgorund of the view*/
 #paneBack{
     -fx-background-color: #3b495f;
 }
 
+/* Style for the table title*/
 #titleTable{
     -fx-font-size: 27px;
     -fx-font-weight: bold;
     -fx-text-fill: white;
 }
 
+/*Style for the table */
 #tableView{
     -fx-background-color: #fff082;
     -fx-border-color: #040303;
@@ -16,6 +19,7 @@
     -fx-alignment: center;
 }
 
+/*Style for the button*/
 #btn2{
     -fx-background-color: black;
     -fx-text-fill: white;
@@ -24,7 +28,7 @@
     -fx-border-width: 2;
     -fx-padding: 2 6 2 6;
 }
-
+/*Style for the button when pointer hovers*/
 #btn2:hover{
     -fx-background-color: #c4c4c4;
     -fx-text-fill: white;
