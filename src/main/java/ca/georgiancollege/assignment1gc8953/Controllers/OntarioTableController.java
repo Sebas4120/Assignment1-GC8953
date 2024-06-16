@@ -14,13 +14,15 @@ import java.io.IOException;
 
 public class OntarioTableController {
 
-
+    //Button to switch to the other view
     @FXML
     private Button btn2;
 
+    //Table view
     @FXML
     private TableView<OntarioModel> tableView;
 
+    // Table columns
     @FXML
     private TableColumn<OntarioModel, Integer> idColumn;
 
@@ -51,6 +53,7 @@ public class OntarioTableController {
         //Adding the data to the table
         tableView.setItems(data);
 
+        //Button to switch to the other view
         btn2.setOnAction(event -> {
             try{
                 PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/assignment-view.fxml");

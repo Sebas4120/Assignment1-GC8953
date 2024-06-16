@@ -37,13 +37,15 @@ public class PopulationController {
     @FXML
     private RadioButton totalRadio;
 
-    private DBUtil dbUtil;
+
 
     @FXML
     public void initialize(){
 
+        //Calling the method to populate the chart
         populateChart();
 
+        //Button to switch to the other view
         btnTable.setOnAction(event -> {
             try {
                 PopulationApplication.switchScene("/ca/georgiancollege/assignment1gc8953/OntarioTable.fxml");
@@ -52,10 +54,100 @@ public class PopulationController {
             }
         });
 
+        //Action to change to female population data
+        femaleRadio.setOnAction(event -> {
+            try {
+                //Setting to the other radio buttons to false
+                maleRadio.setSelected(false);
+                totalRadio.setSelected(false);
+
+                //Setting the title of the chart
+                titleChart.setText("Female Population in Ontario (1970 - 2024)");
+
+                //Clearing the chart
+                OntarioChart.getData().clear();
+
+                //Getting the data from the model
+                List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
+
+                //Creating the series
+                XYChart.Series<String, Number> series = new XYChart.Series<>();
+                series.setName("Female Population in Ontario (1970 - 2024)");
+
+                //Adding the data to the series
+                for (OntarioModel ontarioModel : ontarioModels) {
+                    series.getData().add(new XYChart.Data<>(ontarioModel.getYear(),
+                            ontarioModel.getFemale()));
+
+                    System.out.println(ontarioModel.getFemale());
+                }
+
+                //Adding the series to the chart
+                OntarioChart.getData().add(series);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e);
+            }
+        });
+
+        //Action to change to male population data
+        maleRadio.setOnAction(event -> {
+            try {
+                //Setting to the other radio buttons to false
+                femaleRadio.setSelected(false);
+                totalRadio.setSelected(false);
+
+                //Setting the title of the chart
+                titleChart.setText("Male Population in Ontario (1970 - 2024)");
+
+                //Clearing the chart
+                OntarioChart.getData().clear();
+
+                //Getting the data from the model
+                List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
+
+                //Creating the series
+                XYChart.Series<String,Number> series = new XYChart.Series<>();
+                series.setName("Male Population in Ontario (1970 - 2024)");
+
+                //Adding the data to the series
+                for (OntarioModel ontarioModel : ontarioModels){
+                    series.getData().add(new XYChart.Data<>(ontarioModel.getYear(), ontarioModel.getMale()));
+
+                    System.out.println(ontarioModel.getYear());
+                    System.out.println(ontarioModel.getMale());
+                }
+
+                //Adding the series to the chart
+                OntarioChart.getData().add(series);
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(e);
+            }
+        });
+
+        //Action to change to total population data
+        totalRadio.setOnAction(event -> {
+            try {
+                //Setting to the other radio buttons to false
+                maleRadio.setSelected(false);
+                femaleRadio.setSelected(false);
+
+                //Clearing the chart
+                OntarioChart.getData().clear();
+
+                populateChart();
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(e);
+            }
+
+        });
+
     }
 
+    //Method to populate the chart
     private void populateChart(){
-
+        //Setting the Total radio button to true
         totalRadio.setSelected(true);
 
         //Setting the title of the chart
@@ -79,91 +171,96 @@ public class PopulationController {
         OntarioChart.getData().add(series);
     }
 
+    //*******************************************************************
     //Action to change to Male Population
-    @FXML
-    void changeMale(ActionEvent event) {
-        if(maleRadio.isSelected()) {
-
-            //Setting to the other radio buttons to false
-            femaleRadio.setSelected(false);
-            totalRadio.setSelected(false);
-
-            //Setting the title of the chart
-            titleChart.setText("Male Population in Ontario (1970 - 2024)");
-
-            //Clearing the chart
-            OntarioChart.getData().clear();
-
-            //Getting the data from the model
-            List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
-
-            //Creating the series
-            XYChart.Series<String,Number> series = new XYChart.Series<>();
-            series.setName("Male Population in Ontario (1970 - 2024)");
-
-            //Adding the data to the series
-            for (OntarioModel ontarioModel : ontarioModels){
-                series.getData().add(new XYChart.Data<>(ontarioModel.getYear(), ontarioModel.getMale()));
-
-                System.out.println(ontarioModel.getYear());
-                System.out.println(ontarioModel.getMale());
-            }
-
-            //Adding the series to the chart
-            OntarioChart.getData().add(series);
-        }
-    }
+//    @FXML
+//    void changeMale(ActionEvent event) {
+//        if(maleRadio.isSelected()) {
+//
+//            //Setting to the other radio buttons to false
+//            femaleRadio.setSelected(false);
+//            totalRadio.setSelected(false);
+//
+//            //Setting the title of the chart
+//            titleChart.setText("Male Population in Ontario (1970 - 2024)");
+//
+//            //Clearing the chart
+//            OntarioChart.getData().clear();
+//
+//            //Getting the data from the model
+//            List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
+//
+//            //Creating the series
+//            XYChart.Series<String,Number> series = new XYChart.Series<>();
+//            series.setName("Male Population in Ontario (1970 - 2024)");
+//
+//            //Adding the data to the series
+//            for (OntarioModel ontarioModel : ontarioModels){
+//                series.getData().add(new XYChart.Data<>(ontarioModel.getYear(), ontarioModel.getMale()));
+//
+//                System.out.println(ontarioModel.getYear());
+//                System.out.println(ontarioModel.getMale());
+//            }
+//
+//            //Adding the series to the chart
+//            OntarioChart.getData().add(series);
+//        }
+//    }
 
 //*******************************************************************
     //Action to change to female Population
-    @FXML
-    void changeFemale(ActionEvent event) {
-        if(femaleRadio.isSelected()) {
-            //Setting to the other radio buttons to false
-            maleRadio.setSelected(false);
-            totalRadio.setSelected(false);
 
-            //Setting the title of the chart
-            titleChart.setText("Female Population in Ontario (1970 - 2024)");
 
-            //Clearing the chart
-            OntarioChart.getData().clear();
 
-            //Getting the data from the model
-            List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
 
-            //Creating the series
-            XYChart.Series<String,Number> series = new XYChart.Series<>();
-            series.setName("Female Population in Ontario (1970 - 2024)");
-
-            //Adding the data to the series
-            for (OntarioModel ontarioModel : ontarioModels){
-                series.getData().add(new XYChart.Data<>(ontarioModel.getYear(),
-                        ontarioModel.getFemale()));
-
-                System.out.println(ontarioModel.getFemale());
-            }
-
-            //Adding the series to the chart
-            OntarioChart.getData().add(series);
-        }
-    }
+//    @FXML
+//    void changeFemale(ActionEvent event) {
+//        if(femaleRadio.isSelected()) {
+//            //Setting to the other radio buttons to false
+//            maleRadio.setSelected(false);
+//            totalRadio.setSelected(false);
+//
+//            //Setting the title of the chart
+//            titleChart.setText("Female Population in Ontario (1970 - 2024)");
+//
+//            //Clearing the chart
+//            OntarioChart.getData().clear();
+//
+//            //Getting the data from the model
+//            List<OntarioModel> ontarioModels = OntarioModel.getOntarioData2();
+//
+//            //Creating the series
+//            XYChart.Series<String,Number> series = new XYChart.Series<>();
+//            series.setName("Female Population in Ontario (1970 - 2024)");
+//
+//            //Adding the data to the series
+//            for (OntarioModel ontarioModel : ontarioModels){
+//                series.getData().add(new XYChart.Data<>(ontarioModel.getYear(),
+//                        ontarioModel.getFemale()));
+//
+//                System.out.println(ontarioModel.getFemale());
+//            }
+//
+//            //Adding the series to the chart
+//            OntarioChart.getData().add(series);
+//        }
+//    }
 
 //******************************************************************
     //Action to change to Total Population
-    @FXML
-    void changeTotal(ActionEvent event) {
-        if(totalRadio.isSelected()) {
-            //Setting to the other radio buttons to false
-            maleRadio.setSelected(false);
-            femaleRadio.setSelected(false);
-
-            //Clearing the chart
-            OntarioChart.getData().clear();
-
-            populateChart();
-        }
-    }
+//    @FXML
+//    void changeTotal(ActionEvent event) {
+//        if(totalRadio.isSelected()) {
+//            //Setting to the other radio buttons to false
+//            maleRadio.setSelected(false);
+//            femaleRadio.setSelected(false);
+//
+//            //Clearing the chart
+//            OntarioChart.getData().clear();
+//
+//            populateChart();
+//        }
+//    }
 
 
 

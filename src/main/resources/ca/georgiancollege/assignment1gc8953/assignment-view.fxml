@@ -31,9 +31,9 @@
       </Label>
       <Pane fx:id="radioBacks" layoutX="50.0" layoutY="418.0" prefHeight="33.0" prefWidth="597.0" stylesheets="@../../../cssStyles/styleChart.css">
          <children>
-            <RadioButton fx:id="totalRadio" layoutX="67.0" layoutY="8.0" mnemonicParsing="false" onAction="#changeTotal" prefHeight="17.0" prefWidth="79.0" text="Total" textFill="#fffefe" />
-            <RadioButton fx:id="maleRadio" layoutX="265.0" layoutY="7.0" mnemonicParsing="false" onAction="#changeMale" prefHeight="17.0" prefWidth="68.0" text="Male" textFill="WHITE" />
-            <RadioButton fx:id="femaleRadio" layoutX="446.0" layoutY="7.0" mnemonicParsing="false" onAction="#changeFemale" text="Female" textFill="WHITE" />
+            <RadioButton fx:id="totalRadio" layoutX="67.0" layoutY="8.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="79.0" text="Total" textFill="#fffefe" />
+            <RadioButton fx:id="maleRadio" layoutX="265.0" layoutY="7.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="68.0" text="Male" textFill="WHITE" />
+            <RadioButton fx:id="femaleRadio" layoutX="446.0" layoutY="7.0" mnemonicParsing="false" text="Female" textFill="WHITE" />
          </children>
       </Pane>
    </children>

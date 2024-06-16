@@ -3,6 +3,9 @@ package ca.georgiancollege.assignment1gc8953;
 import java.sql.*;
 
 public class DBUtil {
+    //DBUtil is the class that will connect to the database
+
+
 
     //Connection String
     //Username
@@ -24,6 +27,7 @@ public class DBUtil {
         password = "Narangita412.";
 
         try{
+            //Trying to connect with the database
             connection = DriverManager.getConnection
                     (connectionString + "/" + database,username,password);
         }catch (Exception e){
@@ -31,6 +35,7 @@ public class DBUtil {
         }
     }
 
+    //Getters and Setters
     public String getTable() {
         return table;
     }
@@ -39,12 +44,16 @@ public class DBUtil {
         this.table = table;
     }
 
-    //Paso 2
+    //Create a Statement and execute the SQL query using statement.execute(sql)
+    //This method is used to execute queries that do not return results (INSERT, UPDATE, DELETE).
     public void queryExec(String sql) throws Exception{
         statement = connection.createStatement();
         statement.execute(sql);
     }
 
+
+    //Creates a PreparedStatement and executes the SQL query using preparedStatement.executeQuery().
+    //This method is used to execute queries that return results (SELECT).
     public ResultSet queryResult (String sql) throws SQLException{
         preparedStatement = connection.prepareStatement(sql);
         return preparedStatement.executeQuery();
